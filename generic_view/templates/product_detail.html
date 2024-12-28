@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .product-details {
+            font-size: 1.2em;
+            color: #34495e;
+            margin-top: 20px;
+        }
+
+        .price {
+            font-size: 1.8em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #7f8c8d;
+            line-height: 1.6;
+            text-align: justify;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.3s forwards;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 0.8s ease-out 0.5s forwards;
+        }
+
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .price {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ product.name }}</h1>
+    <p class="price">${{ product.price }}</p>
+    <p class="description">{{ product.description }}</p>
+    <a href="{% url 'product-list' %}" class="back-link">Back to List</a>
+</div>
+
+</body>
+</html>

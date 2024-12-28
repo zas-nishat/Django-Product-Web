@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #495057;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.3em;
+        }
+
+        .hero .cta-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Time Display */
+        .current-time {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px;
+            backdrop-filter: blur(8px); /* Blur effect */
+        }
+
+        /* Stylish Text Section */
+        .stylish-text {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #007bff;
+            font-style: italic;
+        }
+
+        /* Container */
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            font-size: 2.5em;
+            margin-top: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .price {
+                font-size: 1.2em;
+            }
+
+            .add-product {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="/aboutus">About Us</a>
+    <a href="/contact">Contact</a>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Welcome to Our Online Store</h1>
+    <p>Your one-stop shop for amazing products</p>
+    <a href="/products" class="cta-btn">Shop Now</a>
+    <div id="time" class="current-time"></div> <!-- Current time will be displayed here -->
+</div>
+
+<!-- Stylish Text Section -->
+<div class="container">
+    <div class="stylish-text">
+        "Empowering your shopping experience with innovation and ease."
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Your Store. All Rights Reserved.</p>
+    <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a>
+</footer>
+
+<script>
+    function updateTime() {
+        const timeElement = document.getElementById('time');
+        const options = { 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            hour12: true 
+        };
+        const currentTime = new Date().toLocaleTimeString([], options);
+        timeElement.textContent = `${currentTime}`;
+    }
+
+    // Update the time every second
+    setInterval(updateTime, 1000);
+
+    // Initial call to display time
+    updateTime();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #3E4E6F;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .contact-form:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-form h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4B7B8C;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+            font-size: 1em;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #4B7B8C;
+            background-color: #fff;
+            outline: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 16px;
+            background-color: #4B7B8C;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #3e5b67;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .contact-info p {
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="/aboutus">About Us</a>
+    <a href="/contact">Contact</a>
+</nav>
+
+<div class="container">
+    <h1>Contact Us</h1>
+    <div class="contact-form">
+        <h2>We'd Love to Hear From You</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="contact-info">
+        <p>If you prefer, you can reach us directly:</p>
+        <p>Email: <a href="mailto:mdalopi@gmail.com" style="color: #4B7B8C;">mdalopi@gmail.com</a></p>
+        <p>Phone: <a href="tel:+880 1870 345 945" style="color: #4B7B8C;">+880 1870 345 945</a></p>
+    </div>
+</div>
+
+</body>
+</html>
